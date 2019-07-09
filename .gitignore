@@ -30,7 +30,6 @@ hs_err_pid*
 */idea/*
 *.xml
 
-resources/jars/*
-*/resources/jars/*
+
 
 Object-oriented-orogramming-Java-core-examples.iml
