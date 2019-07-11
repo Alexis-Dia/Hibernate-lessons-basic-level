@@ -1,0 +1,2 @@
+For using custom dtd, for windows change in the hibernate.cfg.xml this line:
+    <!DOCTYPE hibernate-configuration SYSTEM "E:\IdeadProjects\helloWorldProj\Hibernate-lessons-basic-level\src\resources\my.dtd">
