@@ -11,6 +11,6 @@
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">validate</property>
         <property name="debug">true</property>
-        <mapping resource="task18/Employee.hbm.xml"></mapping>
+        <mapping resource="task19/Employee.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
