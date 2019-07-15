@@ -1,4 +1,4 @@
-package by.bntu.fitr.povt.pojos;
+package by.bntu.fitr.povt.task18.pojos;
 
 public class Person {
     private int id;
