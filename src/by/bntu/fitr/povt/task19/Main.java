@@ -4,6 +4,7 @@ import by.bntu.fitr.povt.task19.dao.DAOMaker;
 import by.bntu.fitr.povt.task19.dao.IDAOFactory;
 import by.bntu.fitr.povt.task19.dao.idao.IDAOUser;
 import by.bntu.fitr.povt.task19.pojos.Employee;
+import org.hibernate.HibernateException;
 
 public class Main {
 
@@ -11,7 +12,13 @@ public class Main {
 
         IDAOFactory factory = new DAOMaker();
         IDAOUser<Employee> daoUser = factory.getDAOUser();
-        daoUser.delete(36);
+        //IDAOUser<Employee> daoUser = new UserDAO();
+
+        try {
+            daoUser.delete(1);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
 
     }
 }

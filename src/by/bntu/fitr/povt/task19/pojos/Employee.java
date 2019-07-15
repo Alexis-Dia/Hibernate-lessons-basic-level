@@ -2,7 +2,7 @@ package by.bntu.fitr.povt.task19.pojos;
 
 import java.io.Serializable;
 
-public class Employee extends MySuperClass<String, Integer> implements Serializable {
+public class Employee {
     private int id;
     private String firstName;
     private String lastName;

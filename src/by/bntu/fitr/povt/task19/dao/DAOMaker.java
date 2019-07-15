@@ -5,7 +5,7 @@ import by.bntu.fitr.povt.task19.dao.impl.UserDAO;
 import by.bntu.fitr.povt.task19.pojos.Employee;
 
 /**
- * Created by Alexey Druzik on 29.08.2016.
+ * Created by Alexey Druzik on 29.08.2019.
  */
 public class DAOMaker implements IDAOFactory {
 
