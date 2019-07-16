@@ -49,7 +49,69 @@ public abstract class AbstractUserDAO<T> implements IDAOUser<T> {
 			transaction.rollback();
 			throw new HibernateException("HibernateException = ", e);
 		}
+	}
 
+	public T saveOrUpdate (T t) throws HibernateException {
+		Transaction transaction = null;
+		try {
+			Session session = HibernateUtil.getSession();
+			transaction = session.beginTransaction();
+			session.saveOrUpdate(t);
+			session.update(t);
+			transaction.commit();
+		}  catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+			throw new HibernateException("HibernateException = ", e);
+		}
+		return t;
+	}
+
+	public T save (T t) throws HibernateException {
+		Transaction transaction = null;
+		try {
+			Session session = HibernateUtil.getSession();
+			transaction = session.beginTransaction();
+			session.save(t);
+			session.update(t);
+			transaction.commit();
+		}  catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+			throw new HibernateException("HibernateException = ", e);
+		}
+		return t;
+	}
+
+	public T update (T t) throws HibernateException {
+		Transaction transaction = null;
+		try {
+			Session session = HibernateUtil.getSession();
+			transaction = session.beginTransaction();
+			session.update(t);
+			transaction.commit();
+		}  catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+			throw new HibernateException("HibernateException = ", e);
+		}
+		return t;
+	}
+
+	public T find (Integer id) throws HibernateException {
+		Transaction transaction = null;
+		T t = null;
+		try {
+			Session session = HibernateUtil.getSession();
+			transaction = session.beginTransaction();
+			t = (T) session.get(getPersistentClass(), id);
+			transaction.commit();
+		}  catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+			throw new HibernateException("HibernateException = ", e);
+		}
+		return t;
 	}
 
 }
